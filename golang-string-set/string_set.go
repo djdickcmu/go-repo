@@ -51,3 +51,15 @@ func (s StringSet) Difference(other StringSet) StringSet {
 	}
 	return difference
 }
+
+func (s StringSet) Iter() <-chan string {
+	ch := make(chan string)
+	go func() {
+		for elem := range s {
+			ch <- elem
+		}
+		close(ch)
+	}()
+
+	return ch
+}
