@@ -1,7 +1,5 @@
 package string_set
 
-//testupdate
-
 import "fmt"
 
 type StringSet map[string]bool
