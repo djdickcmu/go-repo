@@ -36,6 +36,10 @@ func (s StringSet) Contains(i ...string) bool {
 	return true
 }
 
+func (s StringSet) Size() int {
+	return len(s)
+}
+
 func (s StringSet) Difference(other StringSet) StringSet {
 	//_ = other.(*threadUnsafeSet)
 
